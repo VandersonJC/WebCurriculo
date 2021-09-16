@@ -15,16 +15,21 @@
 
 	<div>
 		<div id="container-login">
-			<div id="container-left"><br><br><br><br><br>
-				<div style="width: 100%; margin-bottom: 70px;">
-					<p style="text-align: center; font-weight: bold; font-size:40px;color:white; text-shadow: 1px 1px rgb(102, 255, 102);">WebCurriculo</p>
+			<div id="container-left">
+				<br><br><br><br><br>
+				<div style="width: 100%; margin-bottom: 40px;">
+					<p style="text-align: center; font-weight: bold; font-size: 40px; color: white; text-shadow: 1px 1px rgb(102, 255, 102);">WebCurriculo</p>
 				</div>
-				<div>Imagem</div>
+				<div id="img_login" style="width: 100%; height: 50%;">
+				</div>
 			</div>
-			<div class="container-right"><br><br>
-					<div style="width: 100%; margin-bottom: 70px;">
-						<p style="text-align: center; font-weight: bold; font-size: 50px;color:rgb(102, 255, 102); text-shadow: 1px 1px yellow;">Bem vindo</p>
-					</div>
+			<div class="container-right">
+				<br>
+				<br>
+				<div style="width: 100%; margin-bottom: 70px;">
+					<p style="text-align: center; font-weight: bold; font-size: 50px; color: rgb(102, 255, 102); text-shadow: 1px 1px yellow;">Bem
+						vindo</p>
+				</div>
 				<form action="#" method="post" id="form-login">
 					<div class="full-box">
 						<label>Usuário</label> <input type="password" name="login"
@@ -38,7 +43,7 @@
 						<input type="button" id="btn-logar" value="Entrar">
 					</div>
 				</form>
-		    </div>
+			</div>
 		</div>
 	</div>
 
