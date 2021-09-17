@@ -65,7 +65,7 @@ body {
 	border-radius: 30px;
 }
 
-.full-box input[type=button] {
+.full-box input[type=submit] {
 	width: 15%;
 	height: 40px;
 	background-image: linear-gradient(to top, rgb(153, 255, 153),
@@ -74,7 +74,7 @@ body {
 	margin-top: 40px;
 }
 
-.full-box input[type=button]:hover {
+.full-box input[type=submit]:hover {
 	zoom: 1.05;
 	cursor: pointer;
 }

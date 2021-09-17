@@ -30,9 +30,9 @@
 					<p style="text-align: center; font-weight: bold; font-size: 50px; color: rgb(102, 255, 102); text-shadow: 1px 1px yellow;">Bem
 						vindo</p>
 				</div>
-				<form action="#" method="post" id="form-login">
+				<form action="acao" method="post" id="form-login">
 					<div class="full-box">
-						<label>Usuário</label> <input type="password" name="login"
+						<label>Usuário</label> <input type="text" name="login"
 							placeholder="Digite o login" required="required">
 					</div>
 					<div class="full-box">
@@ -40,7 +40,7 @@
 							placeholder="Digite a senha" required="required">
 					</div>
 					<div class="full-box">
-						<input type="button" id="btn-logar" value="Entrar">
+						<input type="submit" id="btn-logar" value="Entrar">
 					</div>
 				</form>
 			</div>

@@ -8,9 +8,14 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+		<% 
+			String name = request.getParameter("name");
+
+		%>
+
 	<div>
 		<div id="header">
-			<p>Bem vindo, Vanderson<p>
+			<p>Bem vindo, <%=name%><p>
 		</div>
 		 <div id="center">
 			<div id="container-painel">

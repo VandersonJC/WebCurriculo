@@ -14,13 +14,13 @@ public class ConectBD {
 			String user = "root";
 			String password = "";
 			String driver = "com.mysql.cj.jdbc.Driver";
+			Class.forName(driver);
+			con = DriverManager.getConnection(url, user, password);
 			
 		} catch (Exception e) {
+
 			e.printStackTrace();
-		}
-		
-		
-		
+		}	
 		
 		return con;
 	}
