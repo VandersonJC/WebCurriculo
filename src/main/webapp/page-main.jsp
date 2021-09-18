@@ -1,3 +1,8 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.text.DateFormat"%>
+<%@page import="entities.*"%>
+<%@page import="java.util.*"%>
+<%@page import="dao.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -6,16 +11,16 @@
 <meta charset="UTF-8">
 <title>Página principal</title>
 <link rel="stylesheet" href="css/style.css">
+<script src="js/scripts.js"></script>
 </head>
 <body>
 		<% 
 			String name = request.getParameter("name");
-
 		%>
 
 	<div>
 		<div id="header">
-			<p>Bem vindo, <%=name%><p>
+			<p id="header-name">Bem vindo, <%=name%><p>
 		</div>
 		 <div id="center">
 			<div id="container-painel">
@@ -30,7 +35,7 @@
 						     <ul>
 						  		<li><button style="background-color: blue;">Buscar</button></li>
 						  		<li><button style="background-color: gray;">Limpar</button></li>
-						  		<li><button style="background-color: green;">Cadastrar pessoa</button></li>   
+						  		<li><button id="" onclick="cadPessoa(this);" style="background-color: green;">Cadastrar pessoa</button></li>   
 						     </ul>
 						</div>
 					</div>
@@ -47,18 +52,21 @@
 					   			
 					   			<% 
 					   				
+					   				PessoaDAO pessoaDAO = new PessoaDAO();
+					   				ArrayList<pessoa> listPessoa = pessoaDAO.list();
+					   				SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+					   				for(pessoa pessoa : listPessoa){
 					   				
-					   			
 					   			%>
 					   			<tr>
-					   				<td>Teste</td>
-					   				<td>Teste</td>
-					   				<td>Teste</td>
-					   				<td>Teste</td>
-					   				<td><button style="background-color: orange;">Editar</button></td>
-					   				<td><button style="background-color: red;">Excluir</button></td>
+					   				<td><%=pessoa.getNome()%></td>
+					   				<td><%=pessoa.getEmail()%></td>
+					   				<td><%=pessoa.getTelefone()%></td>
+					   				<td><%=sdf.format(pessoa.getData_nascimento())%></td>
+					   				<td><button id="<%=pessoa.getId()%>" onclick="cadPessoa(this);" style="background-color: orange;">Editar</button></td>
+					   				<td><button id="<%=pessoa.getId()%>" onclick="delPessoa(this);" style="background-color: red;">Excluir</button></td>
 					   			</tr>
-					   			<%  %>   			   
+					   			<% } %>   			   
 					   </table>				
 					</div>		
 		    </div>
