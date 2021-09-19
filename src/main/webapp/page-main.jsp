@@ -14,15 +14,10 @@
 <script src="js/scripts.js"></script>
 </head>
 <body>
-	<% 
-			String name = request.getParameter("name");
-		%>
-
 	<div>
 		<div id="header">
 			<p id="header-name">
-				Bem vindo,
-				<%=name%>
+				Bem vindo
 			<p>
 		</div>
 		<div id="center">
@@ -30,14 +25,14 @@
 				<div id="control-painel">
 					<div id="search">
 						<div class="full-box-cad">
-							<label>Nome:</label> <input type="text" name="nome_busca"
+							<label>Nome:</label> <input type="text" id="nome_busca" name="nome_busca"
 								placeholder="Digite o nome" required="required">
 						</div>
 					</div>
 					<div id="buttons">
 						<ul>
-							<li><button style="background-color: blue;">Buscar</button></li>
-							<li><button style="background-color: gray;">Limpar</button></li>
+							<li><button id="Busca_nome" style="background-color: blue;">Buscar</button></li>
+							<li><button id="LimparCampos" onclick="limparCampos();" style="background-color: gray;">Limpar</button></li>
 							<li><button id="" onclick="cadPessoa(this);"
 									style="background-color: green;">Cadastrar pessoa</button></li>
 						</ul>

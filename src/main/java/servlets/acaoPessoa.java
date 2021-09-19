@@ -1,10 +1,10 @@
 package servlets;
 
 import java.io.IOException;
-import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,7 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import entities.*;
 import dao.*;
 import java.util.*;
-
+import java.sql.*;
+import java.util.Date;
 
 /**
  * Servlet implementation class acaoPessoa
@@ -34,16 +35,34 @@ public class acaoPessoa extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+	 String id	= request.getParameter("delPessoa");
+     pessoa pessoa;
+     PessoaDAO pessoaDAO = new PessoaDAO();
+	 
+	 if( id != ""|| id != null) {
+		 
+		 int id_delete = Integer.parseInt(id);
+		 pessoa = new pessoa();
+		 pessoa.setId(id_delete);
+		 try {
+			pessoaDAO.delete(pessoa);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+	 }
+		
+	 
+	    response.sendRedirect("page-main.jsp");
+	
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
 		
 		System.out.println("CHEGOU");
 		String id = request.getParameter("id");
@@ -52,17 +71,22 @@ public class acaoPessoa extends HttpServlet {
 		String tel = request.getParameter("telefone");
 		String data_nascimento = request.getParameter("data_nascimento");
 		
+		System.out.println(id);
+		System.out.println(data_nascimento);
 		int id_numeric = Integer.parseInt(id);
-		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+		SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
 		
-		Date data_nascimento_parse = null;
+
+		Date date = null;
 		try {
-			data_nascimento_parse = formato.parse(data_nascimento);
-		} catch (ParseException e1) {
+			date = (Date) formato.parse(data_nascimento);
+		} catch (ParseException e) {
 			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			e.printStackTrace();
 		}
 		
+		
+		System.out.println(date);
 		pessoa pessoa;
 		PessoaDAO pessoaDAO = new PessoaDAO();
 		
@@ -71,24 +95,24 @@ public class acaoPessoa extends HttpServlet {
 		pessoa.setNome(name);
 		pessoa.setEmail(email);
 		pessoa.setTelefone(tel);
-		pessoa.setData_nascimento(data_nascimento_parse);
+		pessoa.setData_nascimento(date);
 	    try {
 			pessoaDAO.save(pessoa);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}		
-
-		if(id_numeric > 0) {
-			response.sendRedirect("cad-pessoa.jsp");
-		}else {
-			response.sendRedirect("page-main.jsp");
 		}
-		
-		
-		
-		
-		
+			
+
+		if(id_numeric > 0 || id_numeric != 0 ) {
+			RequestDispatcher dispatcher = request.getRequestDispatcher("cad-pessoa.jsp");
+			dispatcher.forward(request, response);
+		}else{
+			RequestDispatcher dispatcher = request.getRequestDispatcher("page-main.jsp");
+			dispatcher.forward(request, response);
+		}
+			
+			
 	}
 
 }

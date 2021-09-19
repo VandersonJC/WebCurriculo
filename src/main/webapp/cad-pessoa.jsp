@@ -15,7 +15,6 @@
 </head>
 <body>
 	<%
-	String name = request.getParameter("name");
 	String id = request.getParameter("id");
 	ArrayList<pessoa> list = new ArrayList<>();
 	if (id == "" || id == null) {
@@ -35,14 +34,13 @@
 
 	<div id="header">
 		<p>
-			Bem vindo,
-			<%=name%>
+			Bem vindo
 		<p>
 	</div>
 	<div id="center">
 		<div id="container-painel">
 			<div id="center-painel">
-				<form action="acaoSave" method="post" id="form-cad">
+				<form action="acaoPessoa" method="post" id="form-cad">
 					<table id="table-cad">
 						<tr>
 							<td><label>ID</label></td>
