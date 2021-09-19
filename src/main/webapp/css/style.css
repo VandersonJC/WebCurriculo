@@ -199,7 +199,6 @@ body {
 #center-painel {
 	width: 50%;
 	height: 800px;
-	background-color: red;
 }
 
 #form-cad {
@@ -208,17 +207,48 @@ body {
 	width: 95%;
 }
 
-#table-cad tr{
+#table-cad tr {
 	text-align: right;
-	font-weight:bold;
+	font-weight: bold;
 }
 
-#table-cad input{
-	width: 300px;
+#table-cad td {
+	padding-bottom: 20px
+}
+
+#table-cad input {
+	width: 350px;
 	height: 30px;
 	border: 0px;
 	border-bottom: 2px solid orange;
 	text-align: center;
 	margin-left: 10px;
-	margin-bottom: 20px;
+}
+
+#buttons-cad {
+	width: 30%;
+	height: 60px;
+	margin-left: 20%;
+	margin-top: 3%;
+}
+
+#buttons-cad input {
+	border: 0px;
+	border-radius: 15px;
+	padding: 5%;
+	font-size: 18px;
+	font-weight: bold;
+	background-color: orange;
+	cursor: pointer;
+}
+
+#buttons-cad a {
+	border: 0px;
+	border-radius: 15px;
+	padding: 5%;
+	background-color: gray;
+	text-decoration: none;
+	color: black;
+	font-size: 18px;
+	font-weight: bold;
 }

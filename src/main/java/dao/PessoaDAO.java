@@ -69,5 +69,27 @@ public class PessoaDAO {
 		return list;
 	}
 	
+	public ArrayList<pessoa> listFilter(int id) throws SQLException
+	{
+		
+		ArrayList<pessoa> list = new ArrayList<pessoa>();
+		String sql = "SELECT * FROM pessoa WHERE id=?";
+		stmt = con.prepareStatement(sql);
+		stmt.setInt(1, id);
+		ResultSet response = stmt.executeQuery();
+		while(response.next()) 
+		{
+			pessoa pessoa = new pessoa();
+			pessoa.setId(response.getInt("id"));
+			pessoa.setNome(response.getString("nome"));
+			pessoa.setEmail(response.getString("email"));
+			pessoa.setTelefone(response.getString("telefone"));
+			pessoa.setData_nascimento(response.getDate("data_nascimento"));
+			list.add(pessoa);
+		}
+		
+		return list;
+	}
+	
 	
 }
