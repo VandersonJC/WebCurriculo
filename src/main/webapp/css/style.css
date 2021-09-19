@@ -47,8 +47,8 @@ body {
 	display: block;
 	text-align: center;
 	width: 100%;
-	color: rgb(102, 255, 102); 
-	text-shadow : 1px 1px yellow;
+	color: rgb(102, 255, 102);
+	text-shadow: 1px 1px yellow;
 	margin-bottom: 20px;
 	font-size: 24px;
 	font-weight: bold;
@@ -81,18 +81,18 @@ body {
 
 #img_login {
 	background-image: url("../imagens/img_login.png");
-    background-repeat: no-repeat;
-    background-position: center;
-   /* opacity: 1;*/
+	background-repeat: no-repeat;
+	background-position: center;
+	/* opacity: 1;*/
 }
 
-#header{
+#header {
 	width: 100%;
 	height: 100px;
 	background-color: gray;
 }
 
-#header p{
+#header p {
 	color: orange;
 	font-size: 30px;
 	font-weight: bold;
@@ -100,33 +100,32 @@ body {
 	text-shadow: 1px 1xp black;
 }
 
-#center{
+#center {
 	width: 100%;
 	min-height: 880px;
 	background-color: gray;
 }
 
-#container-painel{
+#container-painel {
 	width: 95%;
 	height: 840px;
 	margin-left: 2.5%;
 	background-color: white;
 	border-radius: 10px;
-	
 }
 
-#table-result{
+#table-result {
 	width: 90%;
 	/*border: 1px solid black;*/
 	margin-left: 5%;
 }
 
-#table-result td{
+#table-result td {
 	padding: 15px;
 	border-bottom: 2px solid orange;
 }
 
-#table-result th{
+#table-result th {
 	padding: 15px;
 	border-bottom: 2px solid black;
 	text-align: left;
@@ -134,7 +133,7 @@ body {
 	font-weight: bold;
 }
 
-#table-result button{
+#table-result button {
 	padding: 10px;
 	border-radius: 15px;
 	border: 0px;
@@ -143,23 +142,23 @@ body {
 	font-weight: bold;
 }
 
-#buttons{
+#buttons {
 	width: 100%;
 	height: 80px;
 	background-color: white;
 }
 
-#buttons ul li{
+#buttons ul li {
 	display: inline-block;
 	padding-top: 15px;
 	padding-left: 20px;
 }
 
-#buttons ul{
+#buttons ul {
 	margin-left: 8%;
 }
 
-#buttons button{
+#buttons button {
 	border: 0px;
 	cursor: pointer;
 	font-size: 14px;
@@ -168,12 +167,12 @@ body {
 	border-radius: 15px;
 }
 
-#search{
+#search {
 	width: 100%;
 	height: 70px;
 }
 
-.full-box-cad{	
+.full-box-cad {
 	width: 100%;
 	height: 60px;
 	background-color: white;
@@ -181,27 +180,45 @@ body {
 	border-radius: 10px 10px 0px 0px;
 }
 
-.full-box-cad input{
+.full-box-cad input {
 	border: 0px;
 	text-align: center;
-	border-bottom: 2px solid white;		
-	background: transparent;	
+	border-bottom: 2px solid white;
+	background: transparent;
 	width: 350px;
 	height: 30px;
-	border-bottom: 2px solid black;	
+	border-bottom: 2px solid black;
 }
 
-.full-box-cad label{	
+.full-box-cad label {
 	font-size: 18px;
 	font-weight: bold;
 	margin-left: 6.5%;
 }
 
+#center-painel {
+	width: 50%;
+	height: 800px;
+	background-color: red;
+}
 
+#form-cad {
+	padding-top: 4%;
+	padding-left: 4%;
+	width: 95%;
+}
 
+#table-cad tr{
+	text-align: right;
+	font-weight:bold;
+}
 
-
-
-
-
-
+#table-cad input{
+	width: 300px;
+	height: 30px;
+	border: 0px;
+	border-bottom: 2px solid orange;
+	text-align: center;
+	margin-left: 10px;
+	margin-bottom: 20px;
+}
